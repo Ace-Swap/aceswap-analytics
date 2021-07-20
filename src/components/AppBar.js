@@ -19,7 +19,7 @@ import {
 import React, { useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
-import Sushi from "./Sushi";
+import Ace from "./Ace";
 import clsx from "clsx";
 import { darkModeVar } from "app/core";
 import useDetect from "../core/hooks/useDetect";
@@ -139,10 +139,10 @@ export default function AppBar({
               justifyContent="space-around"
             >
               <IconButton edge={false} onClick={() => router.push("/")}>
-                <Sushi />
+                <Ace />
               </IconButton>
               <Typography variant="subtitle1" color="textPrimary" noWrap>
-                SushiSwap Analytics
+                AceSwap Analytics
               </Typography>
             </Box>
           </Hidden>

@@ -1,6 +1,6 @@
 import SvgIcon from "@material-ui/core/SvgIcon";
 import { useTheme } from "@material-ui/core";
-export default function Sushi(props) {
+export default function Ace(props) {
   const theme = useTheme();
   return (
     <SvgIcon

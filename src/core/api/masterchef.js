@@ -154,18 +154,20 @@ export async function getPools(client = getApollo()) {
 
   const ethPrice = bundles[0].ethPrice;
 
+  // Bing's change - ACE token address
   const { token } = await getToken(
-    "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2"
+    "0x5bba66dfd37c34a44c78a618776a91fefb0b0e65"
   );
 
-  const sushiPrice = ethPrice * token.derivedETH;
+  const acePrice = ethPrice * token.derivedETH;
 
   // MASTERCHEF
+  // Bing's change - MasterChef address
   const {
     data: { liquidityPositions },
   } = await client.query({
     query: liquidityPositionSubsetQuery,
-    variables: { user: "0xc2edad668740f1aa35e4d8f227fb8e17dca888cd" },
+    variables: { user: "0xb1462e354a652b182994f2d4d10e213ff8401cc1" },
   });
 
   await client.cache.writeQuery({
@@ -176,7 +178,7 @@ export async function getPools(client = getApollo()) {
           (pool) =>
             !POOL_DENY.includes(pool.id) &&
             pool.allocPoint !== "0" &&
-            pool.accSushiPerShare !== "0" &&
+            pool.accAcePerShare !== "0" &&
             pairs.find((pair) => pair?.id === pool.pair)
         )
         .map((pool) => {
@@ -205,11 +207,11 @@ export async function getPools(client = getApollo()) {
 
           const rewardPerBlock =
             ((pool.allocPoint / pool.owner.totalAllocPoint) *
-              pool.owner.sushiPerBlock) /
+              pool.owner.acePerBlock) /
             1e18;
 
 
-          const roiPerBlock = (rewardPerBlock * sushiPrice) / balanceUSD;
+          const roiPerBlock = (rewardPerBlock * acePrice) / balanceUSD;
 
           const roiPerHour = roiPerBlock * blocksPerHour;
 
@@ -227,7 +229,7 @@ export async function getPools(client = getApollo()) {
             roiPerDay,
             roiPerMonth,
             roiPerYear,
-            rewardPerThousand: 1 * roiPerDay * (1000 / sushiPrice),
+            rewardPerThousand: 1 * roiPerDay * (1000 / acePrice),
             tvl:
               (pair.reserveUSD / pair.totalSupply) *
               liquidityPosition.liquidityTokenBalance,

@@ -71,7 +71,7 @@ function IndexPage() {
   return (
     <AppShell>
       <Head>
-        <title>Dashboard | SushiSwap Analytics</title>
+        <title>Dashboard | AceSwap Analytics</title>
       </Head>
       <Box mb={3}>
         <Search pairs={pairs} tokens={tokens} />
@@ -117,7 +117,7 @@ function IndexPage() {
         </Grid>
 
         <Grid item xs={12}>
-          <PairTable title="Top Sushi Liquidity Pairs" pairs={pairs} />
+          <PairTable title="Top Ace Liquidity Pairs" pairs={pairs} />
         </Grid>
 
         <Grid item xs={12}>

@@ -1,8 +1,9 @@
 import gql from "graphql-tag";
 
+// Bing's change - Factory address
 export const factoryQuery = gql`
   query factoryQuery(
-    $id: String! = "0xc0aee478e3658e2610c5f7a4a2e1777ce9e4f2ac"
+    $id: String! = "0x87db33328db19be0f5610d8ed7a1ab64f1bd1242"
   ) {
     factory(id: $id) {
       id
@@ -13,9 +14,10 @@ export const factoryQuery = gql`
   }
 `;
 
+// Bing's change - Factory address
 export const factoryTimeTravelQuery = gql`
   query factoryTimeTravelQuery(
-    $id: String! = "0xc0aee478e3658e2610c5f7a4a2e1777ce9e4f2ac"
+    $id: String! = "0x87db33328db19be0f5610d8ed7a1ab64f1bd1242"
     $block: Block_height!
   ) {
     factory(id: $id, block: $block) {

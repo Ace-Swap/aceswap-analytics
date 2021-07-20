@@ -42,7 +42,7 @@ export default function LiquidityProviderList({
                 <AddressAvatar address={row.address} />
 
                 <Link
-                  href={`https://explorer-mainnet.maticvigil.com/address/${row.address}`}
+                  href={`https://polygonscan.com/address/${row.address}`}
                   target="_blank"
                 >
                   {row.address}
@@ -62,7 +62,7 @@ export default function LiquidityProviderList({
             label: "Liquidity Tokens Staked",
             align: "right",
             render: (row) =>
-              `${decimalFormatter.format(row.amount / 1e18)} SLP`,
+              `${decimalFormatter.format(row.amount / 1e18)} ALP`,
           },
           {
             key: "value",

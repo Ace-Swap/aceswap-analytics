@@ -51,7 +51,7 @@ import {
 import React, { useState } from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
-import Sushi from "./Sushi";
+import Ace from "./Ace";
 import { useRouter } from "next/router";
 
 const drawerWidth = 240;
@@ -93,10 +93,10 @@ export default function AppNavigation() {
         <Hidden smUp implementation="css">
           <Box display="flex" alignItems="center" py={0.5}>
             <IconButton edge={false} onClick={() => router.push("/")}>
-              <Sushi />
+              <Ace />
             </IconButton>
             <Typography variant="subtitle1" color="textPrimary" noWrap>
-              Sushi Analytics
+              Ace Analytics
             </Typography>
           </Box>
         </Hidden>

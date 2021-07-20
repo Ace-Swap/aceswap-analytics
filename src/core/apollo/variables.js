@@ -5,12 +5,12 @@ const getDarkModeVar = () => {
     const isDarkMode = localStorage.getItem("darkMode");
 
     // Set dark mode by default
-    if (isDarkMode === null) {
-      document.documentElement.classList.add(["dark-theme"]);
-      document.documentElement.style.color = "#FFFFFF";
-      localStorage.setItem("darkMode", "true")
-      return true;
-    }
+    // if (isDarkMode === null) {
+    //   document.documentElement.classList.add(["dark-theme"]);
+    //   document.documentElement.style.color = "#FFFFFF";
+    //   localStorage.setItem("darkMode", "true")
+    //   return true;
+    // }
 
     return isDarkMode === "true";
   }
