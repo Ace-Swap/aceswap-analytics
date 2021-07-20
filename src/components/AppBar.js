@@ -139,7 +139,7 @@ export default function AppBar({
               justifyContent="space-around"
             >
               <IconButton edge={false} onClick={() => router.push("/")}>
-                <Ace />
+                <img src="favicon-32x32.png" alt='logo' width="24px" />
               </IconButton>
               <Typography variant="subtitle1" color="textPrimary" noWrap>
                 AceSwap Analytics
